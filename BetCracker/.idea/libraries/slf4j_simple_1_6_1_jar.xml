@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="slf4j-simple-1.6.1.jar">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" />
+    </SOURCES>
+    <jarDirectory url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/../slf4j-simple-1.6.1.jar.zip!/" recursive="false" type="SOURCES" />
+    <jarDirectory url="jar://$PROJECT_DIR$/../slf4j.api-1.6.1.jar.zip!/" recursive="false" type="SOURCES" />
+  </library>
+</component>

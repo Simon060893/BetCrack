@@ -1,0 +1,103 @@
+package com.utils;
+
+import javax.crypto.Cipher;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+/**
+ * Класс для шифрования и дешифрования строк
+ * Использует библиотеку Apache Codec http://commons.apache.org/codec/
+ * @author Рудницкий Валентин
+ */
+public class StringCrypter {
+
+    /**
+     * Упрощенный конструктор. Создает StringCrypter с ключом DESSecretKey со значением по умолчанию (не рекомендуется)
+     */
+    public StringCrypter() {
+        this(new byte[]{1, 2, 3, 4, 5, 6, 7, 8});
+    }
+
+    /**
+     * Упрощенный конструктор. Создает StringCrypter с ключом
+     * DESSecretKey (алгоритм шифрования DES) со значением key.
+     * Ключ key должен иметь длину 8 байт
+     */
+    public StringCrypter(byte[] key) {
+        try {
+            updateSecretKey(new DESSecretKey(key));
+        } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException ex) {
+            throw new IllegalArgumentException(ex.getMessage());
+        }
+    }
+
+    public StringCrypter(SecretKey key) throws NoSuchPaddingException,
+            NoSuchAlgorithmException,
+            InvalidKeyException {
+        updateSecretKey(key);
+    }
+
+    private void updateSecretKey(SecretKey key) throws NoSuchPaddingException,
+            NoSuchAlgorithmException,
+            InvalidKeyException {
+        ecipher = Cipher.getInstance(key.getAlgorithm());
+        dcipher = Cipher.getInstance(key.getAlgorithm());
+        ecipher.init(Cipher.ENCRYPT_MODE, key);
+        dcipher.init(Cipher.DECRYPT_MODE, key);
+    }
+
+    public static class DESSecretKey implements SecretKey {
+
+        private final byte[] key;
+
+        /**
+         * ключ должен иметь длину 8 байт
+         */
+        public DESSecretKey(byte[] key) {
+            this.key = key;
+        }
+
+        @Override
+        public String getAlgorithm() {
+            return "DES";
+        }
+
+        @Override
+        public String getFormat() {
+            return "RAW";
+        }
+
+        @Override
+        public byte[] getEncoded() {
+            return key;
+        }
+    }
+
+    private static Cipher ecipher;
+    private static Cipher dcipher;
+
+    public static String encrypt(String str) {
+        try {
+            byte[] utf8 = str.getBytes("UTF8");
+            byte[] enc = ecipher.doFinal(utf8);
+            return new sun.misc.BASE64Encoder().encode(enc);
+        } catch (Exception e){}
+        return null;
+    }
+
+    /**
+     * Функция расшифрования
+     * @param str зашифрованная строка в формате Base64
+     * @return расшифрованная строка
+     */
+    public static String decrypt(String str)  {
+        try {
+            byte[] dec = new sun.misc.BASE64Decoder().decodeBuffer(str);
+            byte[] utf8 = dcipher.doFinal(dec);
+            return new String(utf8, "UTF8");
+        } catch (Exception e){}
+        return null;
+    }
+}

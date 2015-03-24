@@ -1,0 +1,59 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="BetCracker:war exploded">
+    <output-path>$PROJECT_DIR$/target/BetCracker</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BetCracker" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.cassandra:cassandra-all:0.8.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:r08" />
+          <element id="library" level="project" name="Maven: commons-cli:commons-cli:1.1" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.2" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.4" />
+          <element id="library" level="project" name="Maven: com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.1" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr:3.2" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr-runtime:3.2" />
+          <element id="library" level="project" name="Maven: org.antlr:stringtemplate:3.2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
+          <element id="library" level="project" name="Maven: org.apache.cassandra.deps:avro:1.4.0-cassandra-1" />
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty:6.1.22" />
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.22" />
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.4.0" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.4.0" />
+          <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
+          <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1" />
+          <element id="library" level="project" name="Maven: com.github.stephenc.high-scale-lib:high-scale-lib:1.1.2" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.6" />
+          <element id="library" level="project" name="Maven: org.apache.thrift:libthrift:0.6.1" />
+          <element id="library" level="project" name="Maven: junit:junit:4.4" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.0.1" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.cassandra:cassandra-thrift:0.8.1" />
+          <element id="library" level="project" name="Maven: com.github.stephenc:jamm:0.2.2" />
+          <element id="library" level="project" name="Maven: javax.websocket:javax.websocket-api:1.0" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:4.1.9.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.1.0.GA" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.17.1-GA" />
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:4.1.9.Final" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+          <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:4.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-commons-annotations:3.2.0.Final" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="C:\Users\Катя\Downloads\BetCracker\target/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="BetCracker/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="javadoc">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" />
+    </SOURCES>
+    <jarDirectory url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/../logi.crypto1.1.2.zip!/javadoc" recursive="false" type="SOURCES" />
+  </library>
+</component>

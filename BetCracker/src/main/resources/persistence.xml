@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+    <persistence-unit name="DEVMODE" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>jdbc/ojdbc</jta-data-source>
+        <class>com.registration.models.Expense</class>
+        <class>com.registration.models.HistoryResultEvents</class>
+        <class>com.registration.models.Usere</class>
+        <class>com.db.domain_review.Attrtype</class>
+        <class>com.db.domain_review.Attrvalues</class>
+        <class>com.db.domain_review.Objreference</class>
+        <class>com.db.domain_review.Objtype</class>
+        <class>com.db.domain_review.Superobj</class>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//localhost:1521/forUser"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.connection.username" value="sen13"/>
+            <property name="hibernate.connection.password" value="11"/>
+        </properties>
+    </persistence-unit>
+</persistence>

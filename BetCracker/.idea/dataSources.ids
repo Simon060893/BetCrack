@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Oracle - xe@localhost" uuid="beeddb3b-7541-4188-84b5-3b98fb617094">
+    <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="11.2" driver-name="Oracle JDBC driver" driver-version="11.2.0.3.0">
+      <extra-name-characters>$#</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="SEN14" catalog=""/>
+    <table name="ATTRTYPE" schema="SEN14" catalog="" type="TABLE">
+      <column name="ATTR_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="NAME" sqlType="VARCHAR2" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="OBJECT_TYPE_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <primary-key name="SYS_C009396" columns="ATTR_ID"/>
+      <foreign-key name="FK_17CBR0L7CI8LQJNEMMEUWPGNL" columns="OBJECT_TYPE_ID" ref-table="OBJTYPE" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_TYPE_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_OYB19EXY4FRJDR9GKRPMXTX4C" table="ATTRVALUES" schema="SEN14" catalog="" columns="ATTR_ID"/>
+      <exported-key name="FK_JLFO8SV7T3IWB4UW2ITU1QST5" table="OBJREFERENCE" schema="SEN14" catalog="" columns="ATTR_ID"/>
+    </table>
+    <table name="ATTRVALUES" schema="SEN14" catalog="" type="TABLE">
+      <column name="DATE_VALUE" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="true" jdbcType="93"/>
+      <column name="VALUE" sqlType="VARCHAR2" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="OBJECT_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="ATTR_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <primary-key name="SYS_C009399" columns="ATTR_ID,OBJECT_ID"/>
+      <foreign-key name="FK_OYB19EXY4FRJDR9GKRPMXTX4C" columns="ATTR_ID" ref-table="ATTRTYPE" ref-schema="SEN14" ref-catalog="" ref-columns="ATTR_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_RTOMW3996L25F1B7PBYFG79BH" columns="OBJECT_ID" ref-table="SUPEROBJ" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="HIBERNATE_SEQUENCE" schema="SEN14" catalog="" type="SEQUENCE"/>
+    <table name="OBJREFERENCE" schema="SEN14" catalog="" type="TABLE">
+      <column name="REFERENCE" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="OBJECT_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="ATTR_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <primary-key name="SYS_C009403" columns="ATTR_ID,OBJECT_ID,REFERENCE"/>
+      <foreign-key name="FK_JLFO8SV7T3IWB4UW2ITU1QST5" columns="ATTR_ID" ref-table="ATTRTYPE" ref-schema="SEN14" ref-catalog="" ref-columns="ATTR_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_PRKKD4ONYKWW68T2QO34SB7J" columns="REFERENCE" ref-table="SUPEROBJ" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_1BU4ULX2U9IG954G42ES2E5JL" columns="OBJECT_ID" ref-table="SUPEROBJ" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="OBJTYPE" schema="SEN14" catalog="" type="TABLE">
+      <column name="OBJECT_TYPE_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="NAME" sqlType="VARCHAR2" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PARENT_ID" sqlType="NUMBER" precision="10" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="SYS_C009405" columns="OBJECT_TYPE_ID"/>
+      <foreign-key name="FK_OANAEA940E3SPPGYK5TVPSEBB" columns="PARENT_ID" ref-table="OBJTYPE" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_TYPE_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_17CBR0L7CI8LQJNEMMEUWPGNL" table="ATTRTYPE" schema="SEN14" catalog="" columns="OBJECT_TYPE_ID"/>
+      <exported-key name="FK_OANAEA940E3SPPGYK5TVPSEBB" table="OBJTYPE" schema="SEN14" catalog="" columns="PARENT_ID"/>
+      <exported-key name="FK_OEWDCUXA27JDSO1DBD6B6FKGS" table="SUPEROBJ" schema="SEN14" catalog="" columns="OBJECT_TYPE_ID"/>
+    </table>
+    <table name="SUPEROBJ" schema="SEN14" catalog="" type="TABLE">
+      <column name="OBJECT_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="NAME" sqlType="VARCHAR2" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="OBJECT_TYPE_ID" sqlType="NUMBER" precision="10" scale="0" nullable="false" jdbcType="3"/>
+      <column name="PARENT_ID" sqlType="NUMBER" precision="10" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="SYS_C009408" columns="OBJECT_ID"/>
+      <foreign-key name="FK_OEWDCUXA27JDSO1DBD6B6FKGS" columns="OBJECT_TYPE_ID" ref-table="OBJTYPE" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_TYPE_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_64BDM3M9WJ153OARX7KKUJEY" columns="PARENT_ID" ref-table="SUPEROBJ" ref-schema="SEN14" ref-catalog="" ref-columns="OBJECT_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_RTOMW3996L25F1B7PBYFG79BH" table="ATTRVALUES" schema="SEN14" catalog="" columns="OBJECT_ID"/>
+      <exported-key name="FK_PRKKD4ONYKWW68T2QO34SB7J" table="OBJREFERENCE" schema="SEN14" catalog="" columns="REFERENCE"/>
+      <exported-key name="FK_1BU4ULX2U9IG954G42ES2E5JL" table="OBJREFERENCE" schema="SEN14" catalog="" columns="OBJECT_ID"/>
+      <exported-key name="FK_64BDM3M9WJ153OARX7KKUJEY" table="SUPEROBJ" schema="SEN14" catalog="" columns="PARENT_ID"/>
+    </table>
+    <procedure name="ADD_TO_EAV_FROM" schema="SEN14" catalog="" type="1" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24=">
+      <prototype>
+        <parameter name="P_U" sqlType="NUMBER" precision="22" scale="0" nullable="true" jdbcType="3" type="1" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="CHECKISUSERUNIQUE" schema="SEN14" catalog="" type="2" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24="/>
+    <procedure name="GENER_DATA_TO_PAYCRAC" schema="SEN14" catalog="" type="2" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24=">
+      <prototype>
+        <parameter name="COUNT_DATA_GENERATE" sqlType="NUMBER" precision="22" scale="0" nullable="true" jdbcType="3" type="1" index="2"/>
+        <parameter name="" sqlType="TABLE" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="GET_LIST_OF_AIRPLAN" schema="SEN14" catalog="" type="2" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24=">
+      <prototype>
+        <parameter name="DAY_FLY" sqlType="NUMBER" precision="22" scale="0" nullable="true" jdbcType="3" type="1" index="2"/>
+        <parameter name="" sqlType="TABLE" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="RANDOM_SET_DAT" schema="SEN14" catalog="" type="1" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24=">
+      <prototype>
+        <parameter name="P_U" sqlType="NUMBER" precision="22" scale="0" nullable="true" jdbcType="3" type="1" index="0"/>
+      </prototype>
+    </procedure>
+  </data-source>
+</component>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@//localhost:1521/xe</property>
+        <property name="hibernate.dialeсt">org.hibernate.dialect.Oracle8Dialect </property>
+        <property name="connection.user">sen14</property>
+        <property name="connection.password">11</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <!--<property name="current_session_context_class">thread</property>-->
+
+
+        <!-- Use the C3P0 connection pool. -->
+        <!--<property name="c3p0.min_size">3</property>-->
+        <!--<property name="c3p0.max_size">5</property>-->
+        <!--<property name="c3p0.timeout">1800</property>-->
+
+        <mapping class = "com.db.domain.Attrtype"></mapping>
+        <mapping class = "com.db.domain.Superobj"></mapping>
+        <mapping class = "com.db.domain.Objreference"></mapping>
+        <mapping class = "com.db.domain.Objtype"></mapping>
+        <mapping class = "com.db.domain.Attrvalues"></mapping>
+
+    </session-factory>
+
+</hibernate-configuration>
